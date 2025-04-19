@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        .project-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .project-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-blue-600">Portfolio</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a href="projects.html" class="text-blue-600 font-medium">Projects</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <header class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">My Projects</h1>
+            <p class="text-xl max-w-2xl mx-auto animate-fade-in delay-1">Explore my portfolio of professional work and creative projects</p>
+        </div>
+    </header>
+
+    <!-- Projects Filter -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in delay-2">
+                <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 active" data-filter="all">All Projects</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-filter="web">Web Development</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100" data-filter="branding">Branding</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 - E-commerce Website -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-1" data-category="web">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">E-commerce Platform</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Web</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A full-featured online store with payment integration, inventory management, and customer analytics.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Fitness Mobile App -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-2" data-category="mobile">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Fitness Tracker App</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Mobile</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A cross-platform mobile application for tracking workouts, nutrition, and health metrics with personalized plans.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React Native</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Firebase</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Redux</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - Corporate Website -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-3" data-category="web design">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Corporate Website</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Design</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Modern responsive website for a financial services company with CMS integration and lead generation forms.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">WordPress</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Brand Identity -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-1" data-category="branding">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Brand Identity Package</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">Branding</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Complete visual identity for a startup including logo, color palette, typography, and brand guidelines.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Illustrator</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Photoshop</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">InDesign</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Travel App -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-2" data-category="mobile design">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1504609773096-104ff2c73a4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Travel Planning App</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded">Mobile</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">UI/UX design for a travel application that helps users plan trips, book accommodations, and discover attractions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Figma</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Prototyping</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">User Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 - SaaS Dashboard -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fade-in delay-3" data-category="web">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="project-overlay">
+                            <a href="project-detail.html" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium hover:bg-blue-50 transition">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Analytics Dashboard</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Web</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Custom SaaS dashboard with data visualization, reporting tools, and real-time updates for business intelligence.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">D3.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12 animate-fade-in delay-4">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 border border-blue-500 bg-blue-500 text-white rounded-md">1</a>
+                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">2</a>
+                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">3</a>
+                    <a href="#" class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Have a project in mind?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Let's work together to create something amazing!</p>
+            <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition inline-block">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Portfolio</h3>
+                    <p class="text-gray-400">Creating digital experiences that matter.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="projects.html" class="text-gray-400 hover:text-white transition">Projects</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Branding</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Project filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-500', 'text-white'));
+                
+                // Add active class to clicked button
+                button.classList.add('active', 'bg-blue-500', 'text-white');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Mobile menu toggle (placeholder - would need mobile menu HTML)
+        document.querySelector('nav button').addEventListener('click', () => {
+            console.log('Mobile menu would open here');
+        });
+    </script>
+</body>
+</html>
