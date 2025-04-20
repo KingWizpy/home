@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    @keyframes scrollLoop {
+      0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+    
+    .animate-scroll-loop {
+      animation: scrollLoop 20s linear infinite;
+    }
+    </style>
+    
+
+</head>
+<body class="bg-[#0e0e0e] text-white">
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-20 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      
+      <!-- Text Block -->
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-light leading-snug mb-6">
+          Create positive <span class="italic">Goals</span> in your life & <br />
+          <span class="italic">reach them</span> as <span class="italic">happy</span> as you can.
+        </h2>
+      </div>
+
+      <!-- Certificates Grid -->
+      <section id="certificates" class="relative h-96 overflow-hidden bg-black">
+        <div id="certificatesWrapper" class="absolute top-0 w-full flex flex-col items-center space-y-6 animate-scroll-loop">
+          <img src="img/profil.png" alt="Certificate 1" class="w-72 shadow-lg rounded-lg">
+          <img src="img/profil.png" alt="Certificate 2" class="w-72 shadow-lg rounded-lg">
+          <img src="img/profil.png" alt="Certificate 3" class="w-72 shadow-lg rounded-lg">
+          <img src="img/profil.png" alt="Certificate 4" class="w-72 shadow-lg rounded-lg">
+          <!-- Repeat for smooth loop -->
+          <img src="img/profil.png" alt="Certificate 1 Clone" class="w-72 shadow-lg rounded-lg">
+          <img src="img/profil.png" alt="Certificate 2 Clone" class="w-72 shadow-lg rounded-lg">
+        </div>
+      </section>
+      
+
+    </div>
+  </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+</body>
+</html>

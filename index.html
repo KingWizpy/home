@@ -3,205 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio showcasing my work, skills, and experience in [your field].">
-    <meta name="keywords" content="portfolio, [your profession], [your skills], [your services]">
-    <meta name="author" content="Your Name">
-    <title>Muhammad Gibran | Professional Creator Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing my work, skills, and experience all in one place.">
+    <meta name="keywords" content="portfolio, Game developer, Designer, designer services">
+    <meta name="author" content="Muhammad Gibran">
+    <title>Muhammad Gibran | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-        
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Project card hover effect */
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        /* Mobile menu */
-        .mobile-menu {
-            transition: all 0.3s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-        
-        .mobile-menu.open {
-            max-height: 500px;
-        }
-        
-        /* Light mode styles (default) */
-        :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f9fafb;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --border-color: #e5e7eb;
-            --card-bg: #ffffff;
-        }
-        
-        /* Dark mode styles */
-        .dark {
-            --bg-primary: #1a202c;
-            --bg-secondary: #2d3748;
-            --text-primary: #f7fafc;
-            --text-secondary: #cbd5e0;
-            --border-color: #4a5568;
-            --card-bg: #2d3748;
-        }
-        
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-        }
-        
-        .bg-white {
-            background-color: var(--card-bg);
-        }
-        
-        .text-gray-800 {
-            color: var(--text-primary);
-        }
-        
-        .text-gray-600 {
-            color: var(--text-secondary);
-        }
-        
-        .bg-gray-50 {
-            background-color: var(--bg-secondary);
-        }
-        
-        .bg-gray-900 {
-            background-color: var(--bg-primary);
-        }
-        
-        .border-gray-300 {
-            border-color: var(--border-color);
-        }
-        
-        .bg-gray-200 {
-            background-color: var(--border-color);
-        }
-        
-        .bg-gray-100 {
-            background-color: var(--bg-secondary);
-        }
-        
-        .dark-mode-toggle {
-            position: relative;
-            width: 50px;
-            height: 24px;
-            border-radius: 12px;
-            background-color: #e2e8f0;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .dark .dark-mode-toggle {
-            background-color: #4a5568;
-        }
-        
-        .toggle-circle {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: white;
-            transition: transform 0.3s;
-        }
-        
-        .dark .toggle-circle {
-            transform: translateX(26px);
-            background-color: #1a202c;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        /* Skill bar animation */
-        @keyframes fillBar {
-            from { width: 0%; }
-            to { width: var(--skill-level); }
-        }
-
-        .skill-bar {
-            --skill-level: 90%;
-            height: 8px;
-            background-color: #e2e7eb;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            border-radius: 4px;
-            animation: fillBar 1.5s ease-out forwards;
-        }
-
-        /* Testimonial card */
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Contact form input focus */
-        .contact-input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
-        }
-        
-        /* Hero section gradient */
-        .hero-gradient {
-            background: linear-gradient(to right, #f0f9ff, #f5f3ff);
-        }
-        
-        .dark .hero-gradient {
-            background: linear-gradient(to right, #1a202c, #1a202c);
-        }
-
-        /* About section gradient */
-        .about-gradient {
-            background: linear-gradient(to right, #fdffff, #f7faff); 
-        }
-
-        .dark .about-gradient {
-            background: linear-gradient(to right, #283040, #1e2431); /* Tailwind gray-800 */
-        }
-
-    </style>
 </head>
 <body class="font-sans transition-colors duration-300">
     <!-- Navigation -->
@@ -250,29 +60,30 @@
             </div>
         </div>
     </nav>
-    <!-- 3D -->
+
+    <!-- 3D Section 
     <div class="w-full h-[600px]">
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/9VeJ5W3Yt3ZpWrLC/scene.splinecode"></spline-viewer>
     </div>
+    -->
 
     <!-- Hero Section -->
     <section id="home" class="py-20 hero-gradient">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+            <div class="flex flex-col md:flex-row items-center ">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in-section animate-fade-in">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Muhammad Gibran</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-500 mb-6">Professional Creator</h2>
-                    <p class="text-gray-900 dark:text-gray-500 mb-8 text-lg">I create beautiful, functional, and user-friendly [your work] that help businesses grow and succeed.</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-gray-500 mb-6">Professional Designer</h2>
+                    <p class="text-gray-900 dark:text-gray-500 mb-8 text-lg">I design and develop 2D & 3D game models, characters, and mobile applications with creativity.</p>
                     <div class="flex space-x-4">
                         <a href="#projects" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition shadow-lg">View My Work</a>
                         <a href="#contact" class="border-2 border-blue-500 text-blue-500 dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-full font-medium hover:bg-blue-50 dark:hover:bg-gray-700 transition">Contact Me</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center animate-fade-in delay-1">
+                <div class="md:w-1/2 flex justify-center fade-in-section animate-fade-in delay-1">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-200 to-purple-200 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center">
-                            <!-- Replace with your image -->
                             <img src="img/profil.png" alt="Profile" class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover" />
                         </div>
                         
@@ -290,55 +101,58 @@
     <!-- About Section -->
     <section id="about" class="py-20 about-gradient">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">About <span class="gradient-text">Me</span></h2>
+            <h2 class="text-3xl font-bold text-center mb-16 fade-in-section animate-fade-in">About <span class="gradient-text">Me</span></h2>
             
-            <div class="flex flex-col md:flex-row items-center animate-fade-in delay-1">
+            <div class="flex flex-col md:flex-row items-center fade-in-section animate-fade-in delay-1">
                 <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
                     <div class="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
                         <!-- Replace with your image -->
                         <div class="w-full h-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center">
-                            <img src="img/profil.png" alt="Profile" class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover" />
+                            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                                <source src="assets/runmaid.mp4" type="video/mp4">
+                                <p>Your browser does not support the video tag or the file failed to load.</p>
+                            </video>
                         </div>
                         
                     </div>
                 </div>
                 <div class="md:w-2/3 md:pl-12">
                     <h3 class="text-2xl font-semibold mb-4">Who I Am</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        I'm a passionate [your profession] with [X] years of experience creating exceptional [your work]. I specialize in [your specialties] and have worked with clients ranging from startups to Fortune 500 companies.
+                    <p class="text-gray-900 dark:text-gray-500 mb-6 leading-relaxed">
+                        I'm a passionate game developer and app creator with 6 months of professional experience in Game development. I specialize in designing unique 2D/3D game models, characters, and building simple yet creative mobile applications.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        My approach combines technical expertise with creative problem-solving to deliver solutions that are not only functional but also visually appealing and user-friendly.
+                    <p class="text-gray-900 dark:text-gray-500 mb-6 leading-relaxed">
+                        I regularly develop and publish original games and apps on the Play Store, blending visual storytelling with intuitive functionality. My approach combines technical skills with a strong creative drive to craft digital experiences that are both engaging and user-friendly. I have experience at :
                     </p>
                     <div class="grid grid-cols-2 gap-4 mb-8">
                         <div class="flex items-center">
                             <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">[Specialty 1]</span>
+                            <span class="text-gray-900 dark:text-gray-500">Illustration & Animating Object</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">[Specialty 2]</span>
+                            <span class="text-gray-900 dark:text-gray-500">2D & 3D Character Design</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">[Specialty 3]</span>
+                            <span class="text-gray-900 dark:text-gray-500">Mobile App Development</span>
                         </div>
                         <div class="flex items-center">
                             <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-500 dark:text-blue-300 mr-3">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <span class="text-gray-700 dark:text-gray-300">[Specialty 4]</span>
+                            <span class="text-gray-900 dark:text-gray-500">Level Design & Gameplay Mechanics</span>
                         </div>
                     </div>
-                    <a href="#" class="inline-flex items-center text-blue-500 dark:text-blue-400 font-medium">
+                    <a href="https://drive.google.com/uc?export=download&id=1RR8mHxKNbL0jePDtApA-FKW_zeoEzVSz" target="_blank" rel="noopener" class="inline-flex items-center text-blue-500 dark:text-blue-400 font-medium">
                         Download Resume <i class="fas fa-download ml-2"></i>
-                    </a>
+                    </a>                    
                 </div>
             </div>
         </div>
@@ -348,21 +162,23 @@
     <section id="projects" class="py-20 about-gradient">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4 animate-fade-in">My <span class="gradient-text">Projects</span></h2>
-            <p class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-16 animate-fade-in delay-1">Here are some of my recent projects. Each one was carefully crafted to meet client needs and deliver exceptional results.</p>
+            <p class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-16 animate-fade-in delay-1">A mix of my latest creations — from personal passion projects to a few client collaborations I’ve really enjoyed working on.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md animate-fade-in delay-1">
                     <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
-                        <i class="fas fa-project-diagram text-6xl text-white opacity-80"></i>
+                        <img src="img/bah.jpg" alt="bah" class="h-full w-full object-cover" />
                     </div>
+                      
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Project Name 1</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Brief description of the project and what it accomplished for the client.</p>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Bandung Api Harapan</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Bandung Api Harapan — a unique game inspired by Bandung Lautan Api, made with Unity & Aseprite. Now Available on the Play Store!</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-3 py-1 rounded-full">Technology 1</span>
-                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-3 py-1 rounded-full">Technology 2</span>
-                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-3 py-1 rounded-full">Technology 3</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-3 py-1 rounded-full">
+                                Illustration & Animating Object</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-3 py-1 rounded-full">2D Character Design</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-3 py-1 rounded-full">Level Design</span>
                         </div>
                         <a href="#" class="text-blue-500 dark:text-blue-400 font-medium inline-flex items-center">
                             View Project <i class="fas fa-arrow-right ml-2"></i>
@@ -588,7 +404,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Certificate Section -->
     <section id="testimonials" class="py-20 about-gradient">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4 animate-fade-in">Client <span class="gradient-text">Testimonials</span></h2>
@@ -799,91 +615,5 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-        
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        
-        darkModeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            
-            // Save preference to localStorage
-            const isDark = document.documentElement.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark);
-        });
-        
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For this example, we'll just log it and show an alert
-            console.log({ name, email, subject, message });
-            
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenu.classList.contains('open')) {
-                        mobileMenu.classList.remove('open');
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>

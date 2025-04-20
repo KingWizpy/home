@@ -1,0 +1,205 @@
+
+    /* Custom animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Start hidden */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+
+    /* Gradient text */
+    .gradient-text {
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Smooth scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Project card hover effect */
+    .project-card {
+        transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+        transition: all 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .mobile-menu.open {
+        max-height: 500px;
+    }
+
+    /* Light mode styles (default) */
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f9fafb;
+        --text-primary: #111827;
+        --text-secondary: #4b5563;
+        --border-color: #e5e7eb;
+        --card-bg: #ffffff;
+    }
+
+    /* Dark mode styles */
+    .dark {
+        --bg-primary: #1a202c;
+        --bg-secondary: #2d3748;
+        --text-primary: #f7fafc;
+        --text-secondary: #cbd5e0;
+        --border-color: #4a5568;
+        --card-bg: #2d3748;
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    .bg-white {
+        background-color: var(--card-bg);
+    }
+
+    .text-gray-800 {
+        color: var(--text-primary);
+    }
+
+    .text-gray-600 {
+        color: var(--text-secondary);
+    }
+
+    .bg-gray-50 {
+        background-color: var(--bg-secondary);
+    }
+
+    .bg-gray-900 {
+        background-color: var(--bg-primary);
+    }
+
+    .border-gray-300 {
+        border-color: var(--border-color);
+    }
+
+    .bg-gray-200 {
+        background-color: var(--border-color);
+    }
+
+    .bg-gray-100 {
+        background-color: var(--bg-secondary);
+    }
+
+    .dark-mode-toggle {
+        position: relative;
+        width: 50px;
+        height: 24px;
+        border-radius: 12px;
+        background-color: #e2e8f0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .dark .dark-mode-toggle {
+        background-color: #4a5568;
+    }
+
+    .toggle-circle {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        transition: transform 0.3s;
+    }
+
+    .dark .toggle-circle {
+        transform: translateX(26px);
+        background-color: #1a202c;
+    }
+
+    /* Skill bar animation */
+    @keyframes fillBar {
+        from { width: 0%; }
+        to { width: var(--skill-level); }
+    }
+
+    .skill-bar {
+        --skill-level: 90%;
+        height: 8px;
+        background-color: #e2e7eb;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .skill-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        border-radius: 4px;
+        width: 0%; /* Start with width 0 for the animation */
+        transition: width 1.5s ease-out; /* Smooth transition for the width change */
+    }
+
+    /* Animation trigger class */
+    .skill-bar-fill.animate {
+        animation: fillBar 1.5s ease-out forwards;
+    }
+
+
+    /* Testimonial card */
+    .testimonial-card {
+        transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contact form input focus */
+    .contact-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Hero section gradient */
+    .hero-gradient {
+        background: linear-gradient(to right, #f0f9ff, #f5f3ff);
+    }
+
+    .dark .hero-gradient {
+        background: linear-gradient(to right, #1a202c, #1a202c);
+    }
+
+    /* About section gradient */
+    .about-gradient {
+        background: linear-gradient(to right, #fdffff, #f7faff); 
+    }
+
+    .dark .about-gradient {
+        background: linear-gradient(to right, #283040, #1e2431); /* Tailwind gray-800 */
+    }
