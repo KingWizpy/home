@@ -226,4 +226,65 @@
     }, { threshold: 0.3 });
     
     fade2Observer.observe(splineContainer);
-    
+
+    // Scroll tombol untuk desktop
+    const containersertifikat = document.getElementById('scrollContainer');
+    const scrollLeft = document.getElementById('scrollLeft');
+    const scrollRight = document.getElementById('scrollRight');
+
+    if (scrollLeft && scrollRight) {
+        scrollLeft.addEventListener('click', () => {
+        containersertifikat.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        scrollRight.addEventListener('click', () => {
+        containersertifikat.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    }
+
+    // IntersectionObserver untuk animasi saat scroll
+    const observersertifikat = new IntersectionObserver(
+        (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', '-translate-x-10');
+            entry.target.classList.add('opacity-100', 'translate-x-0');
+            }
+        });
+        },
+        {
+        root: containersertifikat,
+        threshold: 0.5,
+        }
+    );
+
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        observersertifikat.observe(card);
+    });
+
+    //modal
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.certificate-card img').forEach(img => {
+        img.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modalImg.src = img.src;
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modalImg.src = "";
+    });
+
+    // Tutup modal jika klik di luar gambar
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+        modal.classList.add('hidden');
+        modalImg.src = "";
+        }
+    });
+
+        
