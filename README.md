@@ -1,4 +1,4 @@
-# My-Personal-Portofolio
+# My-Personal-Portofolip
 
 <img src="https://drive.google.com/uc?id=1Xj2lJYYfhGtQyUpy9iOeHIXTn3EbsGtf" />
 
